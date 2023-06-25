@@ -1,0 +1,9 @@
+ubuntu@ip-172-31-89-10:~$ touch devops{1..20}.txt
+ubuntu@ip-172-31-89-10:~$ ls
+devops.txt   devops10.txt  devops13.txt  devops16.txt  devops19.txt  devops3.txt  devops6.txt  devops9.txt
+devops.txt2  devops11.txt  devops14.txt  devops17.txt  devops2.txt   devops4.txt  devops7.txt
+devops1.txt  devops12.txt  devops15.txt  devops18.txt  devops20.txt  devops5.txt  devops8.txt
+ubuntu@ip-172-31-89-10:~$ rm devops.txt devops.txt2
+ubuntu@ip-172-31-89-10:~$ ls
+devops1.txt   devops11.txt  devops13.txt  devops15.txt  devops17.txt  devops19.txt  devops20.txt  devops4.txt  devops6.txt  devops8.txt
+devops10.txt  devops12.txt  devops14.txt  devops16.txt  devops18.txt  devops2.txt   devops3.txt   devops5.txt  devops7.txt  devops9.txt
