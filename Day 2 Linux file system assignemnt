@@ -1,0 +1,24 @@
+[cloudshell-user@ip-10-2-2-216 ~]$ mkdir home
+[cloudshell-user@ip-10-2-2-216 ~]$ cd home
+[cloudshell-user@ip-10-2-2-216 home]$ touch demo.txt
+[cloudshell-user@ip-10-2-2-216 home]$ ls
+demo.txt
+[cloudshell-user@ip-10-2-2-216 home]$ ls l-art
+ls: cannot access l-art: No such file or directory
+[cloudshell-user@ip-10-2-2-216 home]$ ls -lart
+total 8
+drwxrwxrwx 5 cloudshell-user cloudshell-user 4096 Jun 26 11:33 ..
+-rw-rw-r-- 1 cloudshell-user cloudshell-user    0 Jun 26 11:33 demo.txt
+drwxrwxr-x 2 cloudshell-user cloudshell-user 4096 Jun 26 11:33 .
+[cloudshell-user@ip-10-2-2-216 home]$ chmod u-rwx, g-rw
+chmod: invalid mode: ‘u-rwx,’
+Try 'chmod --help' for more information.
+[cloudshell-user@ip-10-2-2-216 home]$ chmod u-rwt,g-rw demo.txt
+[cloudshell-user@ip-10-2-2-216 home]$ ls
+demo.txt
+[cloudshell-user@ip-10-2-2-216 home]$ ls -lart
+total 8
+drwxrwxrwx 5 cloudshell-user cloudshell-user 4096 Jun 26 11:33 ..
+-------r-- 1 cloudshell-user cloudshell-user    0 Jun 26 11:33 demo.txt
+drwxrwxr-x 2 cloudshell-user cloudshell-user 4096 Jun 26 11:33 .
+[cloudshell-user@ip-10-2-2-216 home]$ 
