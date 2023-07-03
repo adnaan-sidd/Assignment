@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Send HTTP request and store the response
+response=$(curl -s -o /dev/null -w "%{http_code}" guvi.in)
+
+# Print the HTTP error code
+echo "HTTP Error Code: $response"
+
+# Check the response code and print success or failure message
+if [[ $response == 200 ]]; then
+    echo "Success: The website is accessible."
+else
+    echo "Failure: The website is not accessible."
+fi
+
+#Given a file, replace all occurrence of the word ""guvi"" with ""learning"" from 5th line till end in only those lines that contains word ""welcome""
+
+ubuntu@ip-172-31-86-51:~$ touch mytext.sh
+ubuntu@ip-172-31-86-51:~$ vi mytext.sh
+ubuntu@ip-172-31-86-51:~$ mv mytext.sh test.txt
+ubuntu@ip-172-31-86-51:~$ ls
+test.txt
+ubuntu@ip-172-31-86-51:~$ sed -i '5,$s/guvi/learning/' test.txt
+ubuntu@ip-172-31-86-51:~$ ls
+test.txt
+ubuntu@ip-172-31-86-51:~$ cat test.txt
+Welcome to following class
+day8 going with bash scripting continue
+following scenerio
+second half of the class discuss of linux
+learning has been teaching from very long time.
+students is learning various cources from learning
+learning various topics to on IT.
+learning has been great among others bootcamp platforms
+it's amazing learning from learning.
+thank you very much learning.
+ubuntu@ip-172-31-86-51:~$ 
