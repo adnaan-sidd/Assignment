@@ -1,0 +1,72 @@
+ubuntu@ip-172-31-40-79:~$ vi Dockerfile
+ubuntu@ip-172-31-40-79:~$ vi Nginx.conf
+ubuntu@ip-172-31-40-79:~$ mv Nginx.conf nginx.conf
+ubuntu@ip-172-31-40-79:~$ ls
+Dockerfile  nginx.conf
+ubuntu@ip-172-31-40-79:~$ vi docker-compose.yml
+ubuntu@ip-172-31-40-79:~$ docker-compose up -d --build
+Creating network "ubuntu_default" with the default driver
+Building nginx
+Step 1/7 : FROM nginx:latest
+latest: Pulling from library/nginx
+2f44b7a888fa: Pull complete
+8b7dd3ed1dc3: Pull complete
+35497dd96569: Pull complete
+36664b6ce66b: Pull complete
+2d455521f76c: Pull complete
+dc9c4fdb83d6: Pull complete
+8056d2bcf3b6: Pull complete
+Digest: sha256:4c0fdaa8b6341bfdeca5f18f7837462c80cff90527ee35ef185571e1c327beac
+Status: Downloaded newer image for nginx:latest
+ ---> a8758716bb6a
+Step 2/7 : RUN rm /etc/nginx/conf.d/default.conf
+ ---> Running in 186cb7f067c0
+Removing intermediate container 186cb7f067c0
+ ---> 58e7169b6935
+Step 3/7 : COPY nginx.conf /etc/nginx/conf.d/
+ ---> fd026e8aeeee
+Step 4/7 : RUN mkdir -p /var/opt/nginx
+ ---> Running in 8a714a2a5fb0
+Removing intermediate container 8a714a2a5fb0
+ ---> ec0fb19cc443
+Step 5/7 : WORKDIR /var/opt/nginx
+ ---> Running in 8c49f03f1362
+Removing intermediate container 8c49f03f1362
+ ---> 6f612918bddb
+Step 6/7 : EXPOSE 80
+ ---> Running in 4a94b2b5d015
+Removing intermediate container 4a94b2b5d015
+ ---> 69228a510d3e
+Step 7/7 : CMD ["nginx", "-g", "daemon off;"]
+ ---> Running in 117c1f28a4cb
+Removing intermediate container 117c1f28a4cb
+ ---> 17c25855e420
+Successfully built 17c25855e420
+Successfully tagged globalworld/nginx-image:latest
+Creating ubuntu_nginx_1 ... done
+ubuntu@ip-172-31-40-79:~$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: globalworld
+Password:
+WARNING! Your password will be stored unencrypted in /home/ubuntu/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+ubuntu@ip-172-31-40-79:~$ docker push globalworld/nginx-image:latest
+The push refers to repository [docker.io/globalworld/nginx-image]
+f3bfb3b1926c: Pushed
+8e7690e9b3d1: Pushed
+75ec40d8375d: Pushed
+009507b85609: Layer already exists
+fbcc9bc44d3e: Layer already exists
+b4ad47845036: Layer already exists
+eddcd06e5ef9: Layer already exists
+b61d4b2cd2da: Layer already exists
+b6c2a8d6f0ac: Layer already exists
+571ade696b26: Layer already exists
+latest: digest: sha256:7decc557c7eebc10f653564fdfe5350ee9a206107784aecc9515cf39885b169d size: 2399
+ubuntu@ip-172-31-40-79:~$
+
+
+DockerHub Image lInk: https://hub.docker.com/repository/docker/globalworld/nginx-image/general
