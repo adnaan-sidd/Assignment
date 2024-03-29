@@ -1,0 +1,37 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Project
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Project/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/adnaan-sidd/Assignment # timeout=10
+Fetching upstream changes from https://github.com/adnaan-sidd/Assignment
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git fetch --tags --force --progress -- https://github.com/adnaan-sidd/Assignment +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision cebcf628c08d9eeb64b3c4c621068fd791c47475 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cebcf628c08d9eeb64b3c4c621068fd791c47475 # timeout=10
+Commit message: "script.sh"
+ > git rev-list --no-walk 46ff70bdff834fb8841656d210a472ac3ebc0416 # timeout=10
+[Project] $ /bin/sh -xe /tmp/jenkins12862020997320714798.sh
++ pwd
+/var/jenkins_home/workspace/Project
++ ls
+Day 1 Linux assignment
+Day 10
+Day 12
+Day 17
+Day 2 Linux file system assignemnt
+Day 3 Network assignment
+Day 7 assignment
+Day 8
+README.md
+script.sh
++ chmod +x script.sh
++ ./script.sh
+Hello! What's your name?
+Nice to meet you, !
+Finished: SUCCESS
