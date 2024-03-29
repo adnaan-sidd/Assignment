@@ -1,0 +1,25 @@
+score=75
+
+if [ "$score" -ge 90 ]; then
+    echo "Excellent!"
+elif [ "$score" -ge 80 ]; then
+    echo "Good job!"
+elif [ "$score" -ge 70 ]; then
+    echo "Not bad."
+else
+    echo "Keep practicing!"
+fi
+
+
+#Example 2
+age=25
+income=50000
+
+if [ "$age" -lt 30 ] && [ "$income" -gt 40000 ]; then
+    echo "Young professional with a decent income."
+elif [ "$age" -ge 30 ] || [ "$income" -gt 60000 ]; then
+    echo "Experienced or high-earning individual."
+else
+    echo "Other cases."
+fi
+
